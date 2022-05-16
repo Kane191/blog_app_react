@@ -1,0 +1,43 @@
+This is where I'll be writing what I wish to achieve through this app, a to do 
+list of what needs to be done and what is done so far.
+It will also have a mini documentation of how it works 
+
+
+
+
+
+
+
+Mini documentation
+
+    TO RUN CLIENT : cd client, npm start
+    TO RUN SERVER : cd server, npm server
+
+
+
+
+Learned today
+
+    for the server, you need to keep listening to the server. 
+    That is how it is able to save real time.
+    Also to use npm start on server you need to rename your main file server.js
+    or add a script to your package.json eg:
+
+        "scripts": {
+            "start": "node your-script.js"
+        }
+
+
+Done today
+
+    did a figma design of the homepage of tokki blog
+
+
+
+Todo List:
+
+    design homepage
+    frontend css
+    add user form
+    check if it is connected to git
+    design forms
