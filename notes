@@ -27,6 +27,23 @@ Learned today
             "start": "node your-script.js"
         }
 
+    This piece of code below is what enables navigating to different links. We have imported it in blog front page.
+
+        import {BrowserRouter as Router, Route} from "react-router-dom"
+
+    App.js is an important file as it has the id root. It appears in every other page so you
+    can add stuff you want in other pages or add nothing.
+    In this page you add a router tag that changes the content of the page based on the url.
+
+    Example of router tag:
+
+        <Router>
+            <Routes>
+                <Route path = "/" element={<Blogs />} />
+                <Route path = "/createpost" element={<CreatePost />} />
+            </Routes>
+        </Router>
+
 
 Done today
 
@@ -36,8 +53,11 @@ Done today
 
 Todo List:
 
-    design homepage
+    design homepage ✔
+    check if it is connected to git ✔
+    separate app.js styles from homepage styles ✔
+    
+    do homepage html
     frontend css
     add user form
-    check if it is connected to git
     design forms

@@ -1,13 +1,7 @@
 .heading1{
     text-align: center;
-}
-.registration_header{
-    float: right;
-    /* padding-right: 20px; */
-}
-.registration_header a{
-    color: #FFD93D;
-}
-.registration_header a:hover{
-    color: #FF6B6B;
+    font-style: normal;
+    font-weight: 275;
+    font-size: 72px;
+    line-height: 108px;
 }

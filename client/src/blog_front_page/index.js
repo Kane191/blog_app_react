@@ -1,24 +1,15 @@
 import React from "react";
 import './styles.css';
-import CreatePost from '../pages/CreatePost'
-import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
+import '../GeneralStyles.css'
+import carrot from '../images/carrot.png';
 
 const Blogs = () => {
     return (
         <div>
-            <div className="registration_header">
-                <a href={'/'}>Register</a> &nbsp;/ &nbsp;
-                <a href={'/'}>Login</a>
+            <div className="d_flex">
+                <h1 className="heading1 orange_f">TOKKI BLOG</h1>
+                <img alt="" src={carrot} height="60"/>
             </div>
-            <a href="/createpost">Create post</a>
-            <h1 className="heading1">The obligatory blog app in react</h1>
-
-            
-            <Router>
-                <Routes>
-                    <Route path = "/createpost" element={<CreatePost />} />
-                </Routes>
-            </Router>
         </div>
     )
 }
