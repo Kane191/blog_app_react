@@ -1,9 +1,9 @@
 import './App.css';
 import Blogs from './blog_front_page/index';
 import React from "react";
-import './blog_front_page/styles.css';
 import CreatePost from './pages/CreatePost'
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 
 const App = () =>{

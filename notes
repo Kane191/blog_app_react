@@ -44,6 +44,16 @@ Learned today
             </Routes>
         </Router>
 
+    To center an element using margin auto, the element must be:
+
+        1. The element must be block-level, e.g. display: block or display: table
+        2. The element must not float
+        3. The element must not have a fixed or absolute position1
+        4. The element must have a width that is not auto
+
+    If you want to center an element that has display flex, you use justify content 
+    center.
+
 
 Done today
 
@@ -56,7 +66,9 @@ Todo List:
     design homepage ✔
     check if it is connected to git ✔
     separate app.js styles from homepage styles ✔
-    
+    do post html ✔
+
+    do post css
     do homepage html
     frontend css
     add user form
