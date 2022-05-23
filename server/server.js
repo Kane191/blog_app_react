@@ -8,6 +8,17 @@ app.use(cors());
 app.use(express.json());
 
 
+// getting all posts
+app.get("/api/get", (req, res)=>{
+    db.query("SELECT * FROM posts", (err, result)=> {
+        if(err) {
+            console.log(err);
+        }
+        res.send(result);
+        console.log(result);
+    });
+});
+
 // creating a post
 app.post('/api/create', (req, res)=>{
     const userId = req.body.userId;
@@ -19,9 +30,10 @@ app.post('/api/create', (req, res)=>{
             console.log(err);
         }
         console.log(result);
-    })
-} )
+    });
+});
 
+// listening to db
 app.listen(PORT, ()=>{
     console.log(`Server is running on ${PORT}`)
 })

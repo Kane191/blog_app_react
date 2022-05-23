@@ -1,14 +1,17 @@
 import React from "react";
+import './post.css';
 import postImage from '../images/odi.jpg';
 
-const Post = () => {
+const Post = (props) => {
+    console.log(props.props);
+    // Object.keys(props)
     return (
         <div className="col">
             <div className="card">
-                <img alt="" src={postImage} height="250"/>
-                <p className="title">Odi</p>
-                <p className="text">Here is a rare photo of odi my pet hedgehog smiling</p>
-                <a href="#">Read more</a>
+                <img alt="" src={postImage}/>
+                <p className="title">{props.props.title}</p>
+                <p className="text">{props.props.post}</p>
+                <a href="#" className="btn btn-primary">Read more</a>
             </div>
         </div>
     )

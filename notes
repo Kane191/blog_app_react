@@ -54,6 +54,14 @@ Learned today
     If you want to center an element that has display flex, you use justify content 
     center.
 
+    From the frontend section we use 'axios' to retrieve all the data.
+    Then we store the data in the useState hook.
+    After that we use the useEffect hook to display the data.
+
+    When you want to transfer data from one component to another you can use props eg:
+
+        <Post props={val} />
+
 
 Done today
 
@@ -67,9 +75,13 @@ Todo List:
     check if it is connected to git ✔
     separate app.js styles from homepage styles ✔
     do post html ✔
+    do post css✔
+    do homepage html✔
+    retrieve all posts from db✔
 
-    do post css
-    do homepage html
-    frontend css
-    add user form
-    design forms
+    design create post form
+    do create post form css
+    read more to lead to a different page.
+    design register users form
+    do register users form css
+    like blog posts

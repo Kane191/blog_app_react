@@ -1,0 +1,49 @@
+.posts .col {
+    padding-top: 70px;
+}
+.posts .card{
+    border: 3.5px dotted #FF5C00;
+    border-radius: 0;
+    padding-bottom: 30px;
+    transition: 0.3s;
+}
+.posts .card:hover {
+    border: 3.5px solid #FF5C00;
+}
+.posts img {
+    width: 60%;
+    margin: 0 auto;
+}
+.title {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 38px;
+    line-height: 57px;  
+    text-align: center;
+    color: #FF5C00;
+    text-transform: uppercase;
+}
+.text {
+    font-style: normal;
+    font-weight: 275;
+    font-size: 24px;
+    line-height: 36px;
+    text-align: center;
+}
+.posts .btn {
+    background: #168F2E;
+    font-style: normal;
+    font-weight: 275;
+    font-size: 26px;
+    line-height: 39px;
+    width: 70%;
+    border: unset;
+    border-radius: 0;
+    margin:0 auto;  
+    transition: 0.3s; 
+    /* margin-bottom: 50px;  */
+}
+.posts .btn:hover {
+    background: #168F2E;
+    opacity: 0.8;
+}
