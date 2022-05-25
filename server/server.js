@@ -15,7 +15,7 @@ app.get("/api/get", (req, res)=>{
             console.log(err);
         }
         res.send(result);
-        console.log(result);
+        // console.log(result);
     });
 });
 
