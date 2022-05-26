@@ -1,0 +1,56 @@
+.CreatePost{
+    
+}
+.form_bg{
+    background: url('../images/form_bg.png');
+    background-size: 100% 100%;
+    height: 106.1vh;
+    margin-top: -10vh !important;
+    padding-top: 10vh;
+}
+.form_bg h1{
+    justify-content: center;
+    display: grid;
+    font-weight: 275;
+    font-size: 72px;
+    line-height: 108px;
+    color:#FF5C00;
+    padding-top: 55px;
+}
+.form_bg .d-flex{
+    justify-content: center;
+    /* line-height: 5; */
+    font-weight: 275;
+    font-size: 48px;
+    line-height: 90px;
+    padding-top: 95px;
+}
+.form_bg p{
+    margin-right: -30px;
+}
+span{
+    color:#168F2E;
+    font-weight: 300;
+}
+.form_r{
+    padding: 85px 30px 0 20px!important;
+}
+.form_r textarea{
+    height: 300px;
+}
+.form-control{
+    border-radius: 0!important;
+}
+.btn{
+    margin-top: 1.5rem;
+    border-radius: 0!important;
+    border: unset!important;
+    background: #168F2E!important;
+    width: 100%;
+}
+.btn:hover, .btn:active{
+    background: #168F2E!important;
+    border-radius: 0!important;
+    opacity: 0.7;
+    border: unset!important;
+}
