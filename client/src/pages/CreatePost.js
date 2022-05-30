@@ -5,14 +5,21 @@ import carrot from '../images/carrot.png';
 
 
 function CreatePost() {
-    const [userId, setUserId] = useState("");
     const [title, setTitle] = useState("");
     const [post, setPost] = useState("");
+    const [postImage, setPostImage] = useState("");
+    const [postImageName, setPostImageName] = useState("");
 
-    const submitPost = () => {
-        Axios.post('http://localhost:3002/api/create', {userId : userId, title : title, post : post});
+    const saveFile = (e) => {
+        setPostImage(e.target.files[0]);
+        setPostImageName(e.target.files[0].name);
     }
 
+    const submitPost = () => {
+        Axios.post('http://localhost:3002/api/create', {title : title, post : post, postImage: postImage, postImageName : postImageName});
+    }
+    
+      
     return (
         <div className="CreatePost row">
             <div className="col form_bg">
@@ -24,14 +31,12 @@ function CreatePost() {
             </div>
 
             <div className="col form_r">
-                {/* <label>Title: </label> */}
                 <input className="form-control" placeholder="Title" type="text" onChange={(e)=>{  setTitle(e.target.value)  }}/><br/>
 
-                {/* <label>Post: </label> */}
                 <textarea className="form-control" placeholder="Body" onChange={(e)=>{  setPost(e.target.value)  }}></textarea><br/>
 
-                <input placeholder="Select an image" className="form-control" type="file" id="formFile"></input>
-
+                <input placeholder="Select an image" className="form-control" type="file" id="formFile" onChange={saveFile}></input>
+                {/* onChange={(e) => handleFileUpload(e)} */}
                 <button className="btn btn-primary " onClick={submitPost}>Submit Post</button>
             </div>
 
