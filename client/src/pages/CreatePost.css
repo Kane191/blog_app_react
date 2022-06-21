@@ -8,8 +8,11 @@
     margin-top: -10vh !important;
     padding-top: 10vh;
     border-right: 2px dashed #FF5C00;
+    position: fixed;
+    left: 0;
+    right: 50%;
 }
-.form_bg h1{
+.fbg h1{
     justify-content: center;
     display: grid;
     font-weight: 275;
@@ -18,7 +21,7 @@
     color:#FF5C00;
     padding-top: 55px;
 }
-.form_bg .d-flex{
+.fbg .d-flex{
     justify-content: center;
     /* line-height: 5; */
     font-weight: 275;
@@ -26,7 +29,7 @@
     line-height: 90px;
     padding-top: 95px;
 }
-.form_bg p{
+.fbg p{
     margin-right: -30px;
 }
 span{
@@ -55,4 +58,8 @@ span{
     border-radius: 0!important;
     opacity: 0.7;
     border: unset!important;
+}
+.error{
+    color:  rgb(177, 0, 0);
+    font-size: 12px;
 }

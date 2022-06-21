@@ -62,6 +62,9 @@ Learned today
 
         <Post props={val} />
 
+    I've learnt how to save an image in a different folder but I've just realized that I can't display the images I've saved on my frontend because you need to first import images in order to display them but you see I can't import dynamically. So now I see why pple use mongo db for mern stack
+    We need to study the lifecycle of handling images in mern stack. ALso why it can't be sern.
+
 
 Done today
 
@@ -80,10 +83,18 @@ Todo List:
     retrieve all posts from db✔
     design create post form✔
     do create post form css✔
+    check how to add id automatically on create post✔
+    add field to add pictures for the post✔
+    add pictures to db✔
+    research how to display images dynamically from file system✔
+    display images on front page✔
+    validation✔
+    On create post; redirect to home page afterwards✔
 
-    check how to add id automatically on create post
-    add field to add pictures for the post
+    design read more page
     read more to lead to a different page.
     design register users form
     do register users form css
     like blog posts
+
+    <!-- for the todos remaining, though they are few there is a roadblock which is how to display the images dynamically also on the read more different page it may give the same problem but I'm hoping to be done in 2 weeks. Let's set codersbox start date to be 4th June latest. -->
