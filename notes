@@ -63,7 +63,10 @@ Learned today
         <Post props={val} />
 
     I've learnt how to save an image in a different folder but I've just realized that I can't display the images I've saved on my frontend because you need to first import images in order to display them but you see I can't import dynamically. So now I see why pple use mongo db for mern stack
-    We need to study the lifecycle of handling images in mern stack. ALso why it can't be sern.
+    We need to study the lifecycle of handling images in mern stack. Also why it can't be sern.
+    Not yet found a reason why it can't be sern.
+    Also a react component has to have camel case eg ReactComponent esp when you trying to redirect.
+    Actually all of your react components/ js files must be in camelcase or they give you problems in the future ie ReactFile
 
 
 Done today
@@ -90,8 +93,9 @@ Todo List:
     display images on front page✔
     validation✔
     On create post; redirect to home page afterwards✔
+    design read more page✔
 
-    design read more page
+    create the read more page
     read more to lead to a different page.
     design register users form
     do register users form css

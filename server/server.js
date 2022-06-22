@@ -52,6 +52,18 @@ app.post('/api/create', (req, res)=>{
     });
 });
 
+// getting one post
+app.get(`/api/get/:id`, (req, res)=>{
+    const id = req.params.id;
+    db.query(`SELECT * FROM posts WHERE id= ?`, id, (err, result)=> {
+        if(err) {
+            console.log(err);
+        }
+        res.send(result);
+        console.log(result);
+    });
+});
+
 // listening to db
 app.listen(PORT, ()=>{
     console.log(`Server is running on ${PORT}`)

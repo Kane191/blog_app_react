@@ -9,7 +9,8 @@ const Post = (props) => {
                 <img alt={props.props.title} height="250" src={require(`../images/postImages/${props.props.postImage}`)}/>
                 <p className="title">{props.props.title}</p>
                 <p className="text">{props.props.post}</p>
-                <a href="#" className="btn btn-primary">Read more</a>
+                <a href={`blog/${props.props.id}`} className="btn btn-primary">Read more</a>
+                {/* "/readmore" */}
             </div>
         </div>
     )

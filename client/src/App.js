@@ -1,7 +1,8 @@
 import './App.css';
 import Blogs from './blog_front_page/index';
 import React from "react";
-import CreatePost from './pages/CreatePost'
+import CreatePost from './pages/CreatePost';
+import FullPost from './pages/FullPost';
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
@@ -21,6 +22,8 @@ const App = () =>{
             <Routes>
                 <Route path = "/" element={<Blogs />} />
                 <Route path = "/createpost" element={<CreatePost />} />
+                <Route path = "/readmore" element={< FullPost />} />
+                <Route path = "blog/:id" element={< FullPost />} />
             </Routes>
         </Router>
       </div>

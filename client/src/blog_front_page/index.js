@@ -10,7 +10,7 @@ const Blogs = () => {
 
     const [postList, setPostList]=useState([]);
 
-    let navigate = useNavigate();
+    // let navigate = useNavigate();
 
     useEffect(()=>{
         Axios.get("http://localhost:3002/api/get").then((data)=>{

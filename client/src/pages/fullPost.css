@@ -1,0 +1,53 @@
+/* .readMorePostBg{
+    background: url('../images/fox.png');
+    opacity: 0.5;
+    background-size: 100% 100%;
+} */
+.readMorePostBg {
+    width: 70%;
+    height: 75vh;
+    display: block;
+    position: relative;
+    padding-top: 70px;
+    margin: 0 auto;
+}
+.readMorePostBg img, .readMorePostBg h1{
+    padding-top: 20px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+.readMorePostBg::after {
+    content: "";
+    background: url('../images/fox.png');
+    background-size: 100% 150%;
+    background-position: 0;
+    background-repeat: no-repeat;
+    opacity: 0.2;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;   
+}
+.readMorePostBg h1{
+    color: #FF5C00;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    border-bottom: 4px dashed #FF5C00;
+    width: 25%;
+}
+.post{
+    padding: 30px 100px;
+    font-size: 20px;
+    line-height: 38px;
+}
+.author{
+    color: #168F2E;
+    text-align: right;
+    padding-right: 100px;
+    font-weight: 400;
+    font-size: 22px; 
+    line-height: 42px;
+}
