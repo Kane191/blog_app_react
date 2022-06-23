@@ -68,6 +68,13 @@ Learned today
     Also a react component has to have camel case eg ReactComponent esp when you trying to redirect.
     Actually all of your react components/ js files must be in camelcase or they give you problems in the future ie ReactFile
 
+    <!-- Thoughts -->
+    Not everything is going to be perfect in this application. The reason we started this app is not to achieve perfection but to learn more about react.
+    Have you learnt about react? absolutely
+    Then you have no right whatsoever to be dissapointed in yourself after coming this far.
+    Let's finish this app without trying to perfect everything.
+    Learning over perfection is key.
+
 
 Done today
 
@@ -94,9 +101,9 @@ Todo List:
     validation✔
     On create post; redirect to home page afterwards✔
     design read more page✔
+    create the read more page✔
+    read more to lead to a different page.✔
 
-    create the read more page
-    read more to lead to a different page.
     design register users form
     do register users form css
     like blog posts

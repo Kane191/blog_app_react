@@ -17,6 +17,9 @@
     display: flex;
     justify-content: center;
 }
+.readMorePostBg img{
+    height: 250px;
+}
 .readMorePostBg::after {
     content: "";
     background: url('../images/fox.png');
