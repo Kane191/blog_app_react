@@ -5,15 +5,18 @@ import CreatePost from './pages/CreatePost';
 import FullPost from './pages/FullPost';
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-
+import HomeIcon from '@material-ui/icons/Home';
+import AddBoxIcon from '@material-ui/icons/AddBox';
 
 const App = () =>{
   return (
 
       <div>
         <div className="registration_header">
-            <a href={'/'}>Register</a> &nbsp;/ &nbsp;
-            <a href={'/'}>Login</a>
+          <a href={'/'}><HomeIcon/></a><br/>
+          <a href={'/'}><AddBoxIcon/></a>
+            {/* <a href={'/'}>Register</a> &nbsp;/ &nbsp;
+            <a href={'/'}>Login</a> */}
         </div>
         <a href="/createpost">Create post</a>
 

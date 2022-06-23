@@ -75,6 +75,18 @@ Learned today
     Let's finish this app without trying to perfect everything.
     Learning over perfection is key.
 
+    How to add material icons in react
+
+
+     1. install material icon: npm install @material-ui/core @material-ui/icons
+
+     2. import the icon you will use: import MenuIcon from '@material-ui/icons/Menu';
+
+     3. use the icon: <MenuIcon/>
+
+    You can also use https://material-ui.com/components/material-icons/ to search for the icon you need.
+
+
 
 Done today
 

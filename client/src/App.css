@@ -1,5 +1,6 @@
 .registration_header{
   float: right;
+  /* display: block; */
 }
 .registration_header a{
   color: #FFD93D;
