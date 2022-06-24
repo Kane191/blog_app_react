@@ -1,10 +1,9 @@
 import React,{useState,useEffect} from "react";
 import Axios from "axios";
 // import {useNavigate} from "react-router-dom";
-import './index.css';
-import '../GeneralStyles.css'
+import '../styles/posts.css';
 import carrot from '../images/carrot.png';
-import Post from './post';
+import Post from './Post';
 
 const Blogs = () => {
 

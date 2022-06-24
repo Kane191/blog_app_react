@@ -1,10 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+body {
+    font-family: 'Poppins', sans-serif;
+}
+.orange_f {color: #FF5C00;}
+.d_flex {display: flex;}
 .registration_header{
+  position: absolute;
+  right: 0;
   float: right;
-  /* display: block; */
+  margin: 10px 20px 0 0
+}
+.registration_header span{
+  display:none;
 }
 .registration_header a{
-  color: #FFD93D;
+  /* color: #FFD93D; */
+  color: #FF5C00;
+  z-index: 1;
+  position: relative;
+  transition: 0.3s;
+}
+.registration_header span{
+  color: #FF5C00!important;
+}
+.tomboy:hover{
+  background: #FF5C00;
+}
+.tomboy span{
+  color: #FFFFFF!important;
+}
+.registration_header a:hover span{
+  display: inline-block;
+  /* color: #FF6B6B; */
+}
+.MuiSvgIcon-root {
+  font-size: 32px!important;
+  /* display: none!important; */
 }
 .registration_header a:hover{
-  color: #FF6B6B;
+  border: 1px solid #FF5C00;
+  padding: 6px;
+  width: 170px !important;
+  display: inline-block;
+  text-align: center;
+  transition: 0.3s;
+}
+.registration_header a:hover .MuiSvgIcon-root{
+  display: none!important;
 }

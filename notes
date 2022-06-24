@@ -121,3 +121,12 @@ Todo List:
     like blog posts
 
     <!-- for the todos remaining, though they are few there is a roadblock which is how to display the images dynamically also on the read more different page it may give the same problem but I'm hoping to be done in 2 weeks. Let's set codersbox start date to be 4th June latest. -->
+
+    <!-- naming -->
+    -Components
+        -posts
+        -post
+        -create post
+        -post details
+    -Styles
+        -inherit name

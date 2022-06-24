@@ -1,5 +1,5 @@
 import React from "react";
-import './post.css';
+import '../styles/post.css';
 
 const Post = (props) => {
     console.log(props.props);

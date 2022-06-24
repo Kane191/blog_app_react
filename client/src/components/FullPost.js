@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from "react";
 import Axios from "axios";
 // import fox from '../images/fox.png';
-import './fullPost.css'
+import '../styles/fullPost.css'
 import { BrowserRouter as Router, Link, Route, Routes, useParams } from 'react-router-dom';
 
 const FullPost = () => {
@@ -31,6 +31,7 @@ const FullPost = () => {
               {/* require(`../images/postImages/${post.img}`) */}
               {/* src={require(`../images/postImages/${props.props.postImage}`)} */}
               {/* /var/www/html/my_projects/React/blog_app_react/client/src/images/postImages/1655480999876_bt21.jpg */}
+              <div className="wadada"></div>
               <h1>
                 {post.title}
                 </h1>          

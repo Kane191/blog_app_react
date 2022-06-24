@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import Axios from 'axios';
-import './CreatePost.css';
+import '../styles/CreatePost.css';
 import carrot from '../images/carrot.png';
 
 
@@ -53,8 +53,8 @@ function CreatePost() {
                     {errors.title && <p className="error">Please check the title. Max length is 50 characters</p>}
                     <br/>
 
-                    <textarea {...register("post", { required: true, maxLength: 500 })} className="form-control" placeholder="Body" onChange={(e)=>{  setPost(e.target.value)  }} ></textarea>
-                    {errors.post && <p className="error">Please check the post. Max length is 500 characters</p>}
+                    <textarea {...register("post", { required: true, maxLength: 1000 })} className="form-control" placeholder="Body" onChange={(e)=>{  setPost(e.target.value)  }} ></textarea>
+                    {errors.post && <p className="error">Please check the post. Max length is 1000 characters</p>}
                     <br/>
 
                     <input {...register("postImage", { required: true })} placeholder="Select an image" className="form-control" type="file" id="formFile" onChange={saveFile} ></input>

@@ -1,8 +1,8 @@
 import './App.css';
-import Blogs from './blog_front_page/index';
+import Blogs from './components/Posts';
 import React from "react";
-import CreatePost from './pages/CreatePost';
-import FullPost from './pages/FullPost';
+import CreatePost from './components/CreatePost';
+import FullPost from './components/FullPost';
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import HomeIcon from '@material-ui/icons/Home';
@@ -10,15 +10,14 @@ import AddBoxIcon from '@material-ui/icons/AddBox';
 
 const App = () =>{
   return (
-
       <div>
         <div className="registration_header">
-          <a href={'/'}><HomeIcon/></a><br/>
-          <a href={'/'}><AddBoxIcon/></a>
+          <a href={'/'}><HomeIcon/><span>Home</span></a><br/>
+          <a href={'/createpost'} className="tomboy"><AddBoxIcon/><span>Create post</span></a>
             {/* <a href={'/'}>Register</a> &nbsp;/ &nbsp;
             <a href={'/'}>Login</a> */}
         </div>
-        <a href="/createpost">Create post</a>
+        {/* <a href="/createpost">Create post</a> */}
 
         
         <Router>
