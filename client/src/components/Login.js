@@ -10,6 +10,7 @@ const Login = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     const submitPost = (data) => {
+        Axios('http://localhost:3002/api/login', {email: email, password: password})
 
     }
     return (

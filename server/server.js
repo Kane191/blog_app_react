@@ -5,9 +5,11 @@ const multer = require('multer');
 const path = require('path');
 const bodyParser = require('body-parser');
 const fileupload = require("express-fileupload");
-
 const app = express();
 const  PORT = 3002;
+const bcrypt = require('bcrypt');
+const saltRound = 10;
+
 app.use(cors());
 app.use(express.json());
 app.use(fileupload());
@@ -62,6 +64,35 @@ app.get(`/api/get/:id`, (req, res)=>{
         res.send(result);
         console.log(result);
     });
+});
+
+// inserting users to the db
+app.post(`/api/register`, (req, res)=>{
+    console.log(req.body);
+    const first_name = req.body.firstName;
+    const last_name = req.body.lastName;
+    const email = req.body.email;
+    const password = req.body.password;
+
+    bcrypt.hash(password, saltRound, (err, hash)=>{
+        if(err){
+            console.log(err)
+        }
+        else{
+            console.log(hash)
+            db.query("INSERT INTO users (first_name, last_name, email, password) VALUES (?,?,?,?)", [first_name, last_name, email, hash], (err,result)=>{
+                if(err){
+                    console.log(err);
+                }
+                console.log(result);
+            });
+        }
+    })
+});
+
+// loging in the users function
+app. post(`/api/login`, (req, res)=>{
+
 });
 
 // listening to db

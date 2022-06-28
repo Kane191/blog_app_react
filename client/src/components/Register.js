@@ -12,7 +12,7 @@ const Register = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     const submitPost = (data) => {
-
+        Axios.post('http://localhost:3002/api/register',{firstName: firstName, lastName: lastName, email: email, password: password});
     }
     return (
         <div className="CreatePost row">
