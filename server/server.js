@@ -9,14 +9,35 @@ const app = express();
 const  PORT = 3002;
 const bcrypt = require('bcrypt');
 const saltRound = 10;
+const cookieParser = require("cookie-parser");
+const session = require("express-session");
 
-app.use(cors());
+const corsOptions ={
+    origin:'http://localhost:3000', 
+    credentials:true,            //access-control-allow-credentials:true
+    optionSuccessStatus:200
+}
+
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(fileupload());
 app.use(express.static("files"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cookieParser());
 
+// initialize the session
+app.use(
+    session({
+        key: "userId",
+        secret: "subscribe",
+        resave: false,
+        saveUnitialized: false,
+        cookie: {
+            expires: 60 * 60 * 24
+        }
+    })
+)
 // getting all posts
 app.get("/api/get", (req, res)=>{
     db.query("SELECT * FROM posts ", (err, result)=> {
@@ -90,12 +111,72 @@ app.post(`/api/register`, (req, res)=>{
     })
 });
 
+// getting session
+app.get('/api/login', (req, res) =>{
+    if(req.session.user) {
+        res.send({ loggedIn: true, user: req.session.user});
+        console.log('logged in');
+    }
+    else{
+        res.send({ loggedIn: false });
+        console.log('not logged in');
+    }
+})
+
 // loging in the users function
 app. post(`/api/login`, (req, res)=>{
+    console.log(req.body);
+    const email = req.body.email;
+    const password = req.body.password;
 
+    db.query(`SELECT * FROM users WHERE email= ?`, email, (err, result)=> {
+        if(err) {
+            console.log(err);
+        }
+
+        if(result.length > 0){
+            bcrypt.compare(password, result[0].password, (error, response) => {
+                if (response) {
+                    // basically here we have set the result to session
+                    req.session.user = result;
+                    // console.log('session ')
+                    console.log(req.session.user);
+                    console.log(response);
+                    res.send(response);
+                } else{
+                    console.log("Wrong email/ password comination!");
+                    res.send({message: "Wrong email/ password comination!"}); 
+                }
+            });
+        }else{
+            console.log("User doesn't exist");
+            res.send({message: "User doesn't exist"})
+        }
+        
+    });
 });
+
 
 // listening to db
 app.listen(PORT, ()=>{
     console.log(`Server is running on ${PORT}`)
 })
+
+// benefits of calling
+// I'll know if there's sth wrong
+
+// benefits of not calling
+// I don't like this new role of always calling Mwangi.
+// He should communicate without having someone else have to initiate
+// It could be that what he needs is time.
+
+// which one is more Christlike?
+// This is quite tricky... Those who came to Christ He healed but they for sure commnicated their need and with faith too.
+// If I knew whether there was a problem I would have asked butI have no clue other than to assume.
+// love joy peace kindness goodness patience faithfulness humility and self control
+
+// at the end of the day whether you are justified or not , an argumentdoesn't solve anything and no party feels good later on.
+
+// maybe I need to stop jumping to conclusions and practice patience for a day.
+// If tomorrow by 3 he doesn't come then I'll call.
+// It's not the first time he's not come.

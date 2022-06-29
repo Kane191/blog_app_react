@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { useForm } from "react-hook-form";
 import Axios from 'axios';
 import '../styles/CreatePost.css';
@@ -7,12 +7,36 @@ const Login = () => {
     
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [serverError, setServerError] = useState("");
+    const [loginStatus, setLoginStatus] = useState("");
+    const [role, setRole] = useState("");
     const { register, handleSubmit, formState: { errors } } = useForm();
 
-    const submitPost = (data) => {
-        Axios('http://localhost:3002/api/login', {email: email, password: password})
+    Axios.defaults.withCredentials = true;
 
-    }
+    useEffect(() => {
+        Axios.get('http://localhost:3002/api/login').then((response)=>{
+            if (response.data.loggedIn === true) {
+                setRole(response.data.user[0].role);
+            }
+        });
+    }, []);
+
+    const submitPost = (data) => {
+        console.log('getting here');
+           
+        Axios.post('http://localhost:3002/api/login', {email: email, password: password})
+        .then((response) => {
+            if (!response.data.message) {
+                console.log( response);
+                setServerError();
+            } else {
+                console.log(response.data.message);
+                setServerError(response.data.message);
+            }
+        });
+    };    
+
     return (
         <div className="CreatePost row">
             <div className="col fbg ">
@@ -32,6 +56,7 @@ const Login = () => {
                 <input {...register("password", { required: true, maxLength: 50 })}  className="form-control" placeholder="Password" type="password" onChange={(e)=>{  setPassword(e.target.value)  }} />
                 {errors.password && <p className="error">Please check the password. Password should have ...</p>}
                 <br/>
+                <p className="error"> {serverError}</p>
 
                 <button className="btn btn-primary " onClick={handleSubmit(submitPost)}>Login</button>
                 </div>
