@@ -11,6 +11,7 @@ const bcrypt = require('bcrypt');
 const saltRound = 10;
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
+const jwt = require('jsonwebtoken');
 
 const corsOptions ={
     origin:'http://localhost:3000', 
@@ -111,6 +112,31 @@ app.post(`/api/register`, (req, res)=>{
     })
 });
 
+// check user authentication using jwt
+const verifyJWT = (req, res, next) => {
+    const token = req.headers["x-access-token"];
+
+    if (!token) {
+        res.send("We need a token, please give it to us next time");
+    } else {
+        jwt.sign(token, "jwtSecret", (err, decoded) => {
+            if (err) {
+                console.log(err);
+                res.json({auth: false, message: "You are not logged in"})
+            }
+            else{
+                req.userId = decoded.id;
+                next();
+            }
+        })
+    }
+};
+
+app.get('/api/isUserAuth', verifyJWT, (req, res) =>{
+    res.send('You are authenticated, Congrats on reaching this far :)')
+})
+
+
 // getting session
 app.get('/api/login', (req, res) =>{
     if(req.session.user) {
@@ -137,20 +163,25 @@ app. post(`/api/login`, (req, res)=>{
         if(result.length > 0){
             bcrypt.compare(password, result[0].password, (error, response) => {
                 if (response) {
+                    const id = result[0].id;
+                    const token = jwt.sign({id}, "jwtSecret", {
+                        expiresIn: 300,
+                    })
+                    console.log(`id is ${id} and token is ${token}`);
                     // basically here we have set the result to session
                     req.session.user = result;
-                    // console.log('session ')
-                    console.log(req.session.user);
-                    console.log(response);
-                    res.send(response);
+                    // res.send(response);
+                    res.json({auth: true, token: token, result: result});
                 } else{
                     console.log("Wrong email/ password comination!");
-                    res.send({message: "Wrong email/ password comination!"}); 
+                    // res.send({message: "Wrong email/ password comination!"}); 
+                    res.json({auth: false, message: "Wrong email/password"});
                 }
             });
         }else{
             console.log("User doesn't exist");
-            res.send({message: "User doesn't exist"})
+            // res.send({message: "User doesn't exist"})
+            res.json({auth: false, message: "User doesn't exist"})
         }
         
     });

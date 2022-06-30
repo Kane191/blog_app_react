@@ -115,10 +115,16 @@ Todo List:
     design read more page✔
     create the read more page✔
     read more to lead to a different page.✔
-
-    design register users form
-    do register users form css
+    design register users form✔
+    do register users form css✔
+    register users backend✔
+    login users backend✔
+    set session and cookies✔
+    use jwt✔
+    
     like blog posts
+    update post
+    delete post
 
     <!-- for the todos remaining, though they are few there is a roadblock which is how to display the images dynamically also on the read more different page it may give the same problem but I'm hoping to be done in 2 weeks. Let's set codersbox start date to be 4th June latest. -->
 

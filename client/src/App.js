@@ -15,7 +15,7 @@ const App = () =>{
       <div>
         <div className="registration_header">
           <a href={'/'}><HomeIcon/><span>Home</span></a><br/>
-          <a href={'/createpost'} className="tomboy"><AddBoxIcon/><span>Create post</span></a>
+          <a href={'/login'} className="tomboy"><AddBoxIcon/><span>Create post</span></a>
             {/* <a href={'/'}>Register</a> &nbsp;/ &nbsp;
             <a href={'/'}>Login</a> */}
         </div>
