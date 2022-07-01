@@ -121,10 +121,12 @@ Todo List:
     login users backend✔
     set session and cookies✔
     use jwt✔
+    like blog posts✔
+    update post✔
     
-    like blog posts
-    update post
     delete post
+    on create post use the actual user id
+    on post read more get first and last name of the user
 
     <!-- for the todos remaining, though they are few there is a roadblock which is how to display the images dynamically also on the read more different page it may give the same problem but I'm hoping to be done in 2 weeks. Let's set codersbox start date to be 4th June latest. -->
 

@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { useForm } from "react-hook-form";
 import Axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import '../styles/CreatePost.css';
 
 const Register = () => {
@@ -9,10 +10,18 @@ const Register = () => {
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const navigate = useNavigate();
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     const submitPost = (data) => {
-        Axios.post('http://localhost:3002/api/register',{firstName: firstName, lastName: lastName, email: email, password: password});
+        Axios.post('http://localhost:3002/api/register',{firstName: firstName, lastName: lastName, email: email, password: password},
+        ).then((response)=>{
+            console.log("succesfuly registered!");
+            console.log(response.data.message);
+            if (response.data.message === "ok"){
+                navigate('/login');
+            }
+        });
     }
     return (
         <div className="CreatePost row">

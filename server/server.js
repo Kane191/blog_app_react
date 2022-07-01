@@ -12,6 +12,7 @@ const saltRound = 10;
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
 const jwt = require('jsonwebtoken');
+const fs = require('fs');
 
 const corsOptions ={
     origin:'http://localhost:3000', 
@@ -68,7 +69,7 @@ app.post('/api/create', (req, res)=>{
       });
 
 
-    db.query("INSERT INTO posts (user_id, title, post, postImage) VALUES (?,?,?,?)", ['1', title, post, postImageName], (err,result)=>{
+    db.query("INSERT INTO posts (user_id, title, post, postImage, like_count) VALUES (?,?,?,?,?)", ['1', title, post, postImageName, '0'], (err,result)=>{
         if(err){
             console.log(err);
         }
@@ -80,6 +81,61 @@ app.post('/api/create', (req, res)=>{
 app.get(`/api/get/:id`, (req, res)=>{
     const id = req.params.id;
     db.query(`SELECT * FROM posts WHERE id= ?`, id, (err, result)=> {
+        if(err) {
+            console.log(err);
+        }
+        res.send(result);
+        console.log(result);
+    });
+});
+
+// liking a post
+app.post('/api/like', (req, res)=>{
+    const like_count = req.body.likes;
+    const postId = req.body.postId;
+    console.log(`like count is ${like_count} and post id is ${postId}`);
+    db.query(`UPDATE posts SET like_count = ${like_count} WHERE id= ${postId}`, (err, result)=> {
+        if(err) {
+            console.log(err);
+        }
+        res.send(result);
+        console.log(result);
+    });
+});
+
+// updating a post
+app.post('/api/updatepost', (req, res)=>{
+    // after getting everything, then you need to frst get the specific post
+    const id = req.body.id;
+    const title = req.body.title;
+    const post = req.body.post;
+    console.log("update post no. "+id);
+
+    db.query(`SELECT * FROM posts WHERE id= ?`, id, (err, result)=> {
+        if(err) {
+            console.log(err);
+        }
+        
+        // inside here, do the update query.
+        db.query(`UPDATE posts SET title = "${title}" ,post = "${post}" WHERE id= ${id}`, (err, result)=> {
+            if(err) {
+                console.log(err);
+            }
+            res.send(result);
+            console.log(result);
+        });
+
+        // res.send(result);
+        console.log(result);
+    });
+});
+
+// deleting a post
+app.post('/api/delete', (req, res)=>{
+    const id = req.body.id;
+    console.log(`post id is ${id}`);
+    // DELETE FROM `posts` WHERE 0
+    db.query(`DELETE FROM posts WHERE id= ${id}`, (err, result)=> {
         if(err) {
             console.log(err);
         }
@@ -107,6 +163,7 @@ app.post(`/api/register`, (req, res)=>{
                     console.log(err);
                 }
                 console.log(result);
+                res.send({message: "ok"});
             });
         }
     })

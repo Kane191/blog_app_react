@@ -5,6 +5,7 @@ import CreatePost from './components/CreatePost';
 import FullPost from './components/FullPost';
 import Register from './components/Register';
 import Login from './components/Login';
+import UpdatePost from './components/UpdatePost';
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import HomeIcon from '@material-ui/icons/Home';
@@ -30,6 +31,7 @@ const App = () =>{
                 <Route path = "blog/:id" element={< FullPost />} />
                 <Route path = "/register" element={< Register />} />
                 <Route path = "/login" element={< Login />} />
+                <Route path = "/updatepost/:id" element={< UpdatePost />} />
             </Routes>
         </Router>
       </div>

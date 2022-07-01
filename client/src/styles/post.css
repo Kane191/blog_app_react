@@ -52,3 +52,15 @@
     background: #168F2E;
     opacity: 0.8;
 }
+.edit_button, .delete_button{
+    position: absolute;
+    bottom: 45px;
+    color: #FF5C00!important;
+    font-size: 24px!important;
+}
+.edit_button{ 
+    right: 25px;    
+}
+.delete_button{
+    right: 0;   
+}

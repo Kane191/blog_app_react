@@ -3,6 +3,9 @@
     opacity: 0.5;
     background-size: 100% 100%;
 } */
+.heartu .MuiSvgIcon-root {
+    color: #168F2E;
+}
 .readMorePostBg {
     width: 70%;
     height: 75vh;
